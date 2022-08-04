@@ -2,12 +2,14 @@
   "name": "bare-node-proj",
   "version": "1.0.0",
   "description": "A template Github repo containing seed files for Circle's Node.js SDK project",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "dependencies": {
     "typescript": "^4.7.4"
   },
   "devDependencies": {},
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,7 +18,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ashutosh-ukey/bare-node-proj/issues"
   },
