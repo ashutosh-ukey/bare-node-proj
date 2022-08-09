@@ -1,9 +1,9 @@
 export function pingPackage(msg?: string): void {
     if (msg) { 
         console.log("You message is safe with me.");
-        if (msg.includes("starfoosh")) console.log(";)");
+        if (msg.includes("starphish")) console.log(";)");
     }
-    else console.log("Hello world (from inside Ashu's npm account)!");
+    else console.log("Hello world (from inside Ashu's npm account, with 2FA)!");
 }
 
-export const aSecret: string = "I like bubblegum";
+export const aSecret: string = "I like pandas";
