@@ -1,9 +1,12 @@
-name: Conventional Commits
+name: Check Conventional Commits
 
 # .github/workflows/build.yml
-on: [pull_request]
+on:
+  pull_request:
+    branches:
+      - main
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
