@@ -23,7 +23,8 @@
     "url": "git+https://github.com/ashutosh-ukey/bare-node-proj.git"
   },
   "keywords": [
-    "template"
+    "template",
+    "starter"
   ],
   "author": "",
   "license": "MIT",
