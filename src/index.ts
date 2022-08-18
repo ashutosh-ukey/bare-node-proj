@@ -6,4 +6,4 @@ export function pingPackage(msg?: string): void {
     else console.log("Hello world (the final yarn)!");
 }
 
-export const aSecret: string = "I like sushi";
+export const aSecret: string = "This has one keyword";
