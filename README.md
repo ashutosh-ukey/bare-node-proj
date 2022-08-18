@@ -5,3 +5,5 @@ a valid doc change
 
 
 foo
+
+another valid change
