@@ -1,6 +1,6 @@
 {
   "name": "@ashuk203/bare-node-proj",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "A demo Github repo to test creating an npm package",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
