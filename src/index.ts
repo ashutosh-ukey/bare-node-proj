@@ -1,6 +1,6 @@
 export function pingPackage(msg?: string): string {
     if (msg) { 
-        if (msg.includes("Spongebob")) console.log(";)");
+        if (msg.includes("Spongebob")) console.log("Squarepants!");
         console.log("I received:", msg);
     }
     else console.log("Hello world!");
