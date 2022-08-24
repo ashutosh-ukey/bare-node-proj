@@ -19,7 +19,7 @@ jobs:
       # - uses: ./.github/workflows/npm-publish.yml
       #   if: ${{ steps.release.outputs.release_created }}
 
-  npm-publish:
-    needs: build
-    if: steps.release.outputs.release_created
-    uses: ./.github/workflows/npm-publish.yml
+  # npm-publish:
+  #   needs: release-please
+  #   if: steps.release.outputs.release_created
+  #   uses: ./.github/workflows/npm-publish.yml
