@@ -13,9 +13,13 @@ jobs:
           release-type: node
           package-name: release-please-action
 
-      - uses: actions/checkout@v2
+      # - uses: actions/checkout@v2
 
-        # Publish to npm if new release is created
-        if: ${{ steps.release.outputs.release_created }}
-      - uses: ./.github/workflows/npm-publish.yml
-        if: ${{ steps.release.outputs.release_created }}
+      #   if: ${{ steps.release.outputs.release_created }}
+      # - uses: ./.github/workflows/npm-publish.yml
+      #   if: ${{ steps.release.outputs.release_created }}
+
+  npm-publish:
+    needs: build
+    if: steps.release.outputs.release_created
+    uses: ./.github/workflows/npm-publish.yml
