@@ -3,7 +3,7 @@ export function pingPackage(msg?: string): void {
         console.log("I received:", msg);
         if (msg.includes("starphish")) console.log(";)");
     }
-    else console.log("Hello world (the final yarn)!");
+    else console.log("Hello world (a release workflow!)!");
 }
 
 export const aSecret: string = "This has one keyword";
