@@ -3,7 +3,7 @@ export function pingPackage(msg?: string): string {
         if (msg.includes("starphish")) console.log(";)");
         console.log("I received:", msg);
     }
-    else console.log("Hello world (a release workflow!)!");
+    else console.log("Hello world!");
 
     return "You have succesfully pinged the package!"
 }
