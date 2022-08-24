@@ -5,7 +5,7 @@ export function pingPackage(msg?: string): string {
     }
     else console.log("Hello world (a release workflow!)!");
 
-    return "Return beta"
+    return "You have succesfully pinged the package!"
 }
 
 export const aSecret: string = "This has one keyword";
