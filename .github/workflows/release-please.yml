@@ -6,6 +6,8 @@ name: release-please
 jobs:
   release-please:
     runs-on: ubuntu-latest
+    outputs:
+      did-create-release: ${{ steps.release.outputs.release_created }}
     steps:
       - uses: google-github-actions/release-please-action@v3
         id: release
@@ -19,7 +21,7 @@ jobs:
       # - uses: ./.github/workflows/npm-publish.yml
       #   if: ${{ steps.release.outputs.release_created }}
 
-  # npm-publish:
-  #   needs: release-please
-  #   if: steps.release.outputs.release_created
-  #   uses: ./.github/workflows/npm-publish.yml
+  npm-publish:
+    needs: release-please
+    if: needs.release-please.outputs.did-create-release
+    uses: ./.github/workflows/npm-publish.yml
