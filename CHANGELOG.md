@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.2.0](https://github.com/ashutosh-ukey/bare-node-proj/compare/v3.1.0...v3.2.0) (2022-08-24)
+
+
+### Features
+
+* linked secret log statements ([abc1733](https://github.com/ashutosh-ukey/bare-node-proj/commit/abc173316521135ae5bb4d2e86a528bb7f47006e))
+
 ## [3.1.0](https://github.com/ashutosh-ukey/bare-node-proj/compare/v3.0.1...v3.1.0) (2022-08-24)
 
 
