@@ -2,13 +2,16 @@ on:
   push:
     branches:
       - main
-name: release-please
+name: changelog
 jobs:
   release-please:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
       - name: Conventional Changelog Action
         uses: TriPSs/conventional-changelog-action@v3.14.0
         with:
-          github-token: ${{ secrets.github_token }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
