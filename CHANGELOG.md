@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.1](https://github.com/ashutosh-ukey/bare-node-proj/compare/v3.0.0...v3.0.1) (2022-08-24)
+
+
+### Bug Fixes
+
+* change to standard hello world msg ([f713a47](https://github.com/ashutosh-ukey/bare-node-proj/commit/f713a47d875db8453e7e1fab35bcc7578b5c9497))
+
 ## [3.0.0](https://github.com/ashutosh-ukey/bare-node-proj/compare/v2.0.0...v3.0.0) (2022-08-24)
 
 
