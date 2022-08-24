@@ -25,3 +25,4 @@ jobs:
     needs: release-please
     if: needs.release-please.outputs.did-create-release
     uses: ./.github/workflows/npm-publish.yml
+    secrets: inherit
