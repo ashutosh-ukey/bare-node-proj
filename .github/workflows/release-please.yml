@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - main
+      - maain
 name: release-please
 jobs:
   release-please:
