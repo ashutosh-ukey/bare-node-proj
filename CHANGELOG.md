@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.2.2](https://github.com/ashutosh-ukey/bare-node-proj/compare/v3.2.1...v3.2.2) (2022-08-24)
+
+
+### Bug Fixes
+
+* added colon in log ([fe5f860](https://github.com/ashutosh-ukey/bare-node-proj/commit/fe5f86083b6edb58872b6d2d6c585cea3a0f09bc))
+
 ## [3.2.1](https://github.com/ashutosh-ukey/bare-node-proj/compare/v3.2.0...v3.2.1) (2022-08-24)
 
 
