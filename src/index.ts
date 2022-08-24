@@ -8,9 +8,4 @@ export function pingPackage(msg?: string): string {
     return "You have succesfully pinged the package!"
 }
 
-export function sayHello(): void {
-    console.log("Hello Typescript world");
-}
-
-
 export const aSecret: string = "This has one keyword";
