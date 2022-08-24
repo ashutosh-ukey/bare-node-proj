@@ -9,7 +9,7 @@ export function pingPackage(msg?: string): string {
 }
 
 export function sayHello(): void {
-    console.log("Hello world");
+    console.log("Hello Typescript world");
 }
 
 
