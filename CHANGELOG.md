@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.2.1](https://github.com/ashutosh-ukey/bare-node-proj/compare/v3.2.0...v3.2.1) (2022-08-24)
+
+
+### Bug Fixes
+
+* rephrase echo log statement ([2582465](https://github.com/ashutosh-ukey/bare-node-proj/commit/2582465e664de76b47796642c894a039a63e6857))
+
 ## [3.2.0](https://github.com/ashutosh-ukey/bare-node-proj/compare/v3.1.0...v3.2.0) (2022-08-24)
 
 
