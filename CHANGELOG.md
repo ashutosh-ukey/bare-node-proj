@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.1.0](https://github.com/ashutosh-ukey/bare-node-proj/compare/v3.0.1...v3.1.0) (2022-08-24)
+
+
+### Features
+
+* change func secret key ([3a48e6b](https://github.com/ashutosh-ukey/bare-node-proj/commit/3a48e6b39700ece0100c031832706c3cccc7377b))
+
+
+### Bug Fixes
+
+* return msg punctuation ([580150b](https://github.com/ashutosh-ukey/bare-node-proj/commit/580150bbb8d10a4bc438cf5efbdc7e8015bcdd61))
+
 ## [3.0.1](https://github.com/ashutosh-ukey/bare-node-proj/compare/v3.0.0...v3.0.1) (2022-08-24)
 
 
