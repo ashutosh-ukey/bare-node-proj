@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.1.0](https://github.com/ashutosh-ukey/bare-node-proj/compare/v3.2.2...v0.1.0) (2022-08-25)
+
+
+### Features
+
+* simple ping behavior ([15a177e](https://github.com/ashutosh-ukey/bare-node-proj/commit/15a177e8473337454ddded82070faac6e0b518bb))
+
+
+### Bug Fixes
+
+* added template export message ([c4c644c](https://github.com/ashutosh-ukey/bare-node-proj/commit/c4c644c08525bc2b7ea0316d3011168a21449bad))
+
 ## [3.2.2](https://github.com/ashutosh-ukey/bare-node-proj/compare/v3.2.1...v3.2.2) (2022-08-24)
 
 
