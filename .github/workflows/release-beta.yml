@@ -13,7 +13,6 @@ jobs:
         id: release
         with:
           release-type: node
-          release-as: 0.1.0
           package-name: release-please-action
           default-branch: beta-version
 
