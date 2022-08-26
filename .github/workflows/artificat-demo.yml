@@ -27,7 +27,8 @@ jobs:
         with:
           name: homework
           path: ~/hw
-      - run: echo $(ls)
+      - run: ls
+      - run: ls hw
       - name: Print the final result
         shell: bash
         run: |
