@@ -29,6 +29,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: homework
+          path: hw
       - run: ls
       - name: Print the final result
         shell: bash
