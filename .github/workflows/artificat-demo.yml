@@ -7,13 +7,15 @@ jobs:
     name: Add 3 and 7
     runs-on: ubuntu-latest
     steps:
-      - shell: bash
-        run: echo "rawr xD" > math-homework.txt
-      - name: Upload math result for job 1
+      - run: echo "rawr xD" > math-homework.txt
+      - run: echo "intertia is a property of matter (Bill! Bill! Bill!)" > science-homework.txt
+      - run: mkdir hw
+      - run: mv *-homework.txt hw
+      - name: Upload homework
         uses: actions/upload-artifact@v3
         with:
           name: homework
-          path: math-homework.txt
+          path: hw
 
   job_2:
     name: Display results
@@ -27,5 +29,8 @@ jobs:
       - name: Print the final result
         shell: bash
         run: |
-          value=`cat math-homework.txt`
-          echo The result is $value
+          value=`cat hw/math-homework.txt`
+          echo My math homework is $value
+      - run: |
+          value=`cat hw/science-homework.txt`
+          echo My science homework is $value
