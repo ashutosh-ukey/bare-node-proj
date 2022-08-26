@@ -17,7 +17,6 @@ jobs:
         key: version-files
 
     - name: Generate Secret
-      if: steps.cache-primes.outputs.cache-hit != 'true'
       run: echo "woof" > secret.txt
 
 
