@@ -1,6 +1,6 @@
 name: Caching Primes
 
-on: push
+on: [workflow_dispatch]
 
 jobs:
   cache-secret:
