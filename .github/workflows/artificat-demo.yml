@@ -10,7 +10,10 @@ jobs:
       - run: echo "rawr xD" > math-homework.txt
       - run: echo "intertia is a property of matter (Bill! Bill! Bill!)" > science-homework.txt
       - run: mkdir hw
-      - run: mv *-homework.txt hw
+      - run: mv math-homework.txt hw
+      - run: mv science-homework.txt hw
+      - run: ls
+      - run: ls hw
       - name: Upload homework
         uses: actions/upload-artifact@v3
         with:
@@ -28,7 +31,6 @@ jobs:
           name: homework
           path: ~/hw
       - run: ls
-      - run: ls hw
       - name: Print the final result
         shell: bash
         run: |
