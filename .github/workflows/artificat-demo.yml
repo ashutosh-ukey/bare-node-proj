@@ -26,6 +26,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: homework
+          path: ~/
       - name: Print the final result
         shell: bash
         run: |
