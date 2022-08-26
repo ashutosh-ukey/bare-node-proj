@@ -18,7 +18,7 @@ jobs:
 
     - name: Generate Secret
       if: steps.cache-primes.outputs.cache-hit != 'true'
-      run: echo "meow" > secret.txt
+      run: echo "woof" > secret.txt
 
 
   echo-secret:
