@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - shell: bash
-        run: echo "woof" > math-homework.txt
+        run: echo "rawr xD" > math-homework.txt
       - name: Upload math result for job 1
         uses: actions/upload-artifact@v3
         with:
