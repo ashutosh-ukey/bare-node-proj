@@ -1,0 +1,37 @@
+name: Caching Primes
+
+on: push
+
+jobs:
+  cache-secret:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Cache Secret
+      id: cache-primes
+      uses: actions/cache@v3
+      with:
+        path: secret.txt
+        key: version-files
+
+    - name: Generate Secret
+      if: steps.cache-primes.outputs.cache-hit != 'true'
+      run: echo "meow" > secret.txt
+
+
+  echo-secret:
+    needs: [cache-secret]
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Cache Secret
+      id: cache-primes
+      uses: actions/cache@v3
+      with:
+        path: secret.txt
+        key: version-files
+
+    - name: Echo Secret
+      run: echo $(cat secret.txt)
