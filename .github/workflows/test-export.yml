@@ -6,9 +6,10 @@ jobs:
     outputs:
       version: ${{ fromJson(steps.read_packjson.outputs.packageJson).version }}
     steps:
+      - uses: actions/checkout@v3
       - id: read_packjson
         run: |
-          content=`cat ./package.json`
+          content=`cat package.json`
           content="${content//'%'/'%25'}"
           content="${content//$'\n'/'%0A'}"
           content="${content//$'\r'/'%0D'}"
