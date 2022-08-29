@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/ashutosh-ukey/bare-node-proj/compare/v0.2.0...v0.2.1) (2022-08-29)
+
+
+### Bug Fixes
+
+* exciting msg ([9bfa4d9](https://github.com/ashutosh-ukey/bare-node-proj/commit/9bfa4d9b4feadc69385f43062d8f2546e6dfa3ac))
+
 ## [0.2.0](https://github.com/ashutosh-ukey/bare-node-proj/compare/v0.1.1...v0.2.0) (2022-08-29)
 
 
