@@ -1,8 +1,8 @@
 name: Share data between jobs
 
 on:
-  # push:
-  workflow_dispatch:
+  push:
+  # workflow_dispatch:
     
 
 jobs:
@@ -25,6 +25,7 @@ jobs:
 
   job_2:
     name: Display results
+    if: false
     needs: job_1
     runs-on: ubuntu-latest
     steps:
