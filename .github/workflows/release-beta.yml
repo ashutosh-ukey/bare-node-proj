@@ -25,8 +25,15 @@ jobs:
       # - uses: ./.github/workflows/npm-publish.yml
       #   if: ${{ steps.release.outputs.release_created }}
 
-  npm-publish:
+  # npm-publish:
+  #   needs: release-please
+  #   if: needs.release-please.outputs.did-create-release
+  #   uses: ./.github/workflows/npm-publish.yml
+  #   secrets: inherit
+
+  dist-publish:
     needs: release-please
     if: needs.release-please.outputs.did-create-release
-    uses: ./.github/workflows/npm-publish.yml
+    uses: ./.github/workflows/test-export.yml
     secrets: inherit
+

@@ -54,7 +54,7 @@ jobs:
           destination-github-username: 'ashutosh-ukey'
           destination-repository-name: 'bare-node-proj-dist'
           user-email: ashutosh.ukey@circle.com
-          target-branch: auto-release-test
+          target-branch: main
 
       # TODO: Publish to Postman
       # TODO: Publish to circle-node-sdk
