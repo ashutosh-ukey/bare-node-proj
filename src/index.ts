@@ -1,5 +1,5 @@
 export function pingPackage(msg?: string): string {
-    console.log("Test multiple changes listed in one CC commit");
+    console.log("Test multiple changes listed in one CC commit and pipe commit");
     return "pong";
 }
 
