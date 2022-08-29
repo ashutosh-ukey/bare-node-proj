@@ -1,0 +1,60 @@
+on: [push]
+
+jobs:
+  get-version:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ fromJson(steps.read_packjson.outputs.packageJson).version }}
+    steps:
+      - id: read_packjson
+        run: |
+          content=`cat ./path/to/package.json`
+          content="${content//'%'/'%25'}"
+          content="${content//$'\n'/'%0A'}"
+          content="${content//$'\r'/'%0D'}"
+          echo "::set-output name=packageJson::$content"
+
+  setup:
+    needs: get-version
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: mkdir temp-version-export
+      - run: mv CHANGELOG.md temp-version-export
+      - run: echo "${{ needs.get-version.outputs.version }}" > temp-version-export/VERSION
+      - name: Upload 
+        uses: actions/upload-artifact@v3
+        with:
+          name: version
+          path: temp-version-export
+
+  sync:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout this repo
+        uses: actions/checkout@v3
+
+      - name: Load version files
+        uses: actions/download-artifact@v3
+        with:
+          name: version
+          path: temp-version-export
+
+      - name: Publish version files to openapi repository
+        id: push_directory
+        uses: cpina/github-action-push-to-another-repository@ssh-deploy-key
+        env:
+          SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
+        with:
+          source-directory: temp-version-export/
+          target-directory: versioning/
+          destination-github-username: 'ashutosh-ukey'
+          destination-repository-name: 'bare-node-proj-dist'
+          user-email: ashutosh.ukey@circle.com
+          target-branch: auto-release-test
+
+      # TODO: Publish to Postman
+      # TODO: Publish to circle-node-sdk
+
+

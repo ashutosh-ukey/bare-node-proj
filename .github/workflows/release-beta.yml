@@ -1,8 +1,8 @@
 on: 
-  # workflow_dispatch:
-  push:
-    branches:
-      - beta-version
+  workflow_dispatch:
+  # push:
+  #   branches:
+  #     - beta-version
 
 name: \@ashuk203/bare-node-proj
 jobs:
@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       did-create-release: ${{ steps.release.outputs.release_created }}
+      pr-message: ${{ steps.release.outputs.pr }}
     steps:
       - uses: google-github-actions/release-please-action@v3
         id: release
