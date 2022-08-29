@@ -1,8 +1,8 @@
 on: 
-  workflow_dispatch:
-  # push:
-  #   branches:
-  #     - beta-version
+  # workflow_dispatch:
+  push:
+    branches:
+      - beta-version
 
 name: \@ashuk203/bare-node-proj
 jobs:
