@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.2.0](https://github.com/ashutosh-ukey/bare-node-proj/compare/v0.1.1...v0.2.0) (2022-08-29)
+
+
+### Features
+
+* auto version bump recommend ([a7d1de2](https://github.com/ashutosh-ukey/bare-node-proj/commit/a7d1de2b847e80347679baba1a51e5c2e22fe618))
+* commit from pipes ([e98de52](https://github.com/ashutosh-ukey/bare-node-proj/commit/e98de520a59d8ca2d996849b8c45408b7da3fd01))
+* complicated cc log ([676bb34](https://github.com/ashutosh-ukey/bare-node-proj/commit/676bb34348fc01e1fb9e602d374cb621b7dd093a))
+
+
+### Bug Fixes
+
+* added console log ([676bb34](https://github.com/ashutosh-ukey/bare-node-proj/commit/676bb34348fc01e1fb9e602d374cb621b7dd093a))
+* added semicolon ([676bb34](https://github.com/ashutosh-ukey/bare-node-proj/commit/676bb34348fc01e1fb9e602d374cb621b7dd093a))
+* remove test log ([fceb42c](https://github.com/ashutosh-ukey/bare-node-proj/commit/fceb42c7f4cca859e03234401f82fdcc6b14f182))
+* shortened ping message ([e14d887](https://github.com/ashutosh-ukey/bare-node-proj/commit/e14d887403bdda6746cb9c90d7452dc3c40075be))
+
 ## [0.1.1](https://github.com/ashutosh-ukey/bare-node-proj/compare/v0.1.0...v0.1.1) (2022-08-25)
 
 
