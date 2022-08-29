@@ -4,7 +4,7 @@ jobs:
   get-version:
     runs-on: ubuntu-latest
     outputs:
-      version: ${{ steps.read_packjson.outputs.packageJson }}
+      version: ${{ fromJson($content).version }}
     steps:
       - uses: actions/checkout@v3
       - id: read_packjson
@@ -13,7 +13,8 @@ jobs:
           content="${content//'%'/'%25'}"
           content="${content//$'\n'/'%0A'}"
           content="${content//$'\r'/'%0D'}"
-          echo "::set-output name=version::${{ fromJson($content).version }}"
+          version=${{ fromJson($content).version }}
+          echo "::set-output name=version::$version"
 
   setup:
     needs: get-version
