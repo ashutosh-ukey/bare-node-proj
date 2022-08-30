@@ -34,17 +34,14 @@ jobs:
           path: temp-dest-repo
           ref: main
 
-      - name: Sanity check list checked out repo
+      - name: Update version files
         run: |
-          ls temp-dest-repo/*
-
-      - run: |
           rm -rf temp-dest-repo/.git*
           mv CHANGELOG.md temp-dest-repo
           echo "${{ needs.get-version.outputs.version }}" > temp-dest-repo/VERSION
 
       - name: Push directory to another repository
-        uses: cpina/github-action-push-to-another-repository@v1.5
+        uses: cpina/github-action-push-to-another-repository@ssh-deploy-key
         env:
           SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
         with:
@@ -52,7 +49,7 @@ jobs:
           destination-github-username: 'ashutosh-ukey'
           destination-repository-name: 'bare-node-proj-dist'
           user-email: ashutosh.ukey@circle.com
-          target-branch: auto-release-test
+          target-branch: main
 
       # TODO: Publish to Postman
       # TODO: Publish to circle-node-sdk
