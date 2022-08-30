@@ -36,7 +36,7 @@ jobs:
 
       - name: Update version files
         run: |
-          rm -rf temp-dest-repo/.git*
+          rm -rf temp-dest-repo/.git
           mv CHANGELOG.md temp-dest-repo
           echo "${{ needs.get-version.outputs.version }}" > temp-dest-repo/VERSION
 
