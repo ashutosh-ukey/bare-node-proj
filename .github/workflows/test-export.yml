@@ -32,6 +32,7 @@ jobs:
           repsitory: ashutosh-ukey/bare-node-proj-dist
           ssh-key: ${{ secrets.SSH_DEPLOY_KEY }}
           path: temp-dest-repo
+          ref: main
 
       - run: mv CHANGELOG.md temp-dest-repo
       - run: echo "${{ needs.get-version.outputs.version }}" > temp-dest-repo/VERSION
