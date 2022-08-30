@@ -20,7 +20,7 @@ jobs:
       uses: actions/cache@v3
       with:
         path: secret.txt
-        key: ${{ runner.os }}-${{ steps.get-date.outputs.time }}
+        key: ${{ runner.os }}-${{ hashFiles('src/**', '.github/**', 'README.md') }}
 
     - name: Generate Secret
       run: echo "woof" > secret.txt
@@ -36,7 +36,7 @@ jobs:
       uses: actions/cache@v3
       with:
         path: secret.txt
-        key: version-files
+        key: ${{ runner.os }}-${{ hashFiles('src/**', '.github/**', 'README.md') }}
 
     - name: Echo Secret
       run: echo $(cat secret.txt)
