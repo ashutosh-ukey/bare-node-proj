@@ -29,10 +29,10 @@ jobs:
       - name: Checkout destination repo
         uses: actions/checkout@v3
         with:
-          repsitory: ashutosh-ukey/bare-node-proj-dist
+          repository: ashutosh-ukey/bare-node-proj-dist
           ssh-key: ${{ secrets.SSH_DEPLOY_KEY }}
           path: temp-dest-repo
-          ref: auto-release-test
+          ref: main
 
       - name: Sanity check list checked out repo
         run: |
