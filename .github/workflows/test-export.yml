@@ -34,8 +34,10 @@ jobs:
           path: temp-dest-repo
           ref: main
 
-      - run: mv CHANGELOG.md temp-dest-repo
-      - run: echo "${{ needs.get-version.outputs.version }}" > temp-dest-repo/VERSION
+      - run: |
+          cd temp-dest-repo && rm -rf .git*
+          mv CHANGELOG.md temp-dest-repo
+          echo "${{ needs.get-version.outputs.version }}" > temp-dest-repo/VERSION
 
       - name: Publish version files to openapi repository
         id: push_directory
