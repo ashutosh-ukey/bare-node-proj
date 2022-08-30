@@ -32,7 +32,11 @@ jobs:
           repsitory: ashutosh-ukey/bare-node-proj-dist
           ssh-key: ${{ secrets.SSH_DEPLOY_KEY }}
           path: temp-dest-repo
-          ref: main
+          ref: auto-release-test
+
+      - name: Sanity check list checked out repo
+        run: |
+          ls temp-dest-repo/*
 
       - run: |
           rm -rf temp-dest-repo/.git*
@@ -48,7 +52,7 @@ jobs:
           destination-github-username: 'ashutosh-ukey'
           destination-repository-name: 'bare-node-proj-dist'
           user-email: ashutosh.ukey@circle.com
-          target-branch: main
+          target-branch: auto-release-test
 
       # TODO: Publish to Postman
       # TODO: Publish to circle-node-sdk
