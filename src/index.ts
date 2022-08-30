@@ -1,11 +1,5 @@
 export function pingPackage(msg?: string): string {
-    if (msg) { 
-        if (msg.includes("Spongebob")) console.log("Squarepants!");
-        console.log("Echoing: ", msg);
-    }
-    else console.log("Hello world!");
-
-    return "You have succesfully pinged the package"
+    return "pong!";
 }
 
-export const aSecret: string = "My favorite TV show is <placeholder>";
+export const aSecret: string = "My favorite kids cartoon is Spongebob Squarepants";

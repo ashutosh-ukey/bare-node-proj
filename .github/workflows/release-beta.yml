@@ -1,0 +1,39 @@
+on: 
+  # workflow_dispatch:
+  push:
+    branches:
+      - beta-version
+
+name: \@ashuk203/bare-node-proj
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    outputs:
+      did-create-release: ${{ steps.release.outputs.release_created }}
+      pr-message: ${{ steps.release.outputs.pr }}
+    steps:
+      - uses: google-github-actions/release-please-action@v3
+        id: release
+        with:
+          release-type: node
+          package-name: release-please-action
+          default-branch: beta-version
+
+      # - uses: actions/checkout@v2
+
+      #   if: ${{ steps.release.outputs.release_created }}
+      # - uses: ./.github/workflows/npm-publish.yml
+      #   if: ${{ steps.release.outputs.release_created }}
+
+  # npm-publish:
+  #   needs: release-please
+  #   if: needs.release-please.outputs.did-create-release
+  #   uses: ./.github/workflows/npm-publish.yml
+  #   secrets: inherit
+
+  dist-publish:
+    needs: release-please
+    if: needs.release-please.outputs.did-create-release
+    uses: ./.github/workflows/test-export.yml
+    secrets: inherit
+
