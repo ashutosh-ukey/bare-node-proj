@@ -1,4 +1,6 @@
-on: workflow_call
+on: 
+  workflow_call:
+  workflow_dispatch:
 
 jobs:
   get-version:
@@ -17,33 +19,22 @@ jobs:
       - id: extract-version
         run: echo "::set-output name=version::${{ fromJson(steps.read-packjson.outputs.packageJson).version }}"
 
-  setup:
-    needs: get-version
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - run: echo "${{ needs.get-version.outputs.version }}"
-      - run: mkdir temp-version-export
-      - run: mv CHANGELOG.md temp-version-export
-      - run: echo "${{ needs.get-version.outputs.version }}" > temp-version-export/VERSION
-      - name: Upload 
-        uses: actions/upload-artifact@v3
-        with:
-          name: version
-          path: temp-version-export
-
   sync:
-    needs: setup
+    needs: get-version
     runs-on: ubuntu-latest
     steps:
       - name: Checkout this repo
         uses: actions/checkout@v3
 
-      - name: Load version files
-        uses: actions/download-artifact@v3
+      - name: Checkout destination repo
+        uses: actions/checkout@v3
         with:
-          name: version
-          path: temp-version-export
+          repsitory: ashutosh-ukey/bare-node-proj-dist
+          ssh-key: ${{ secrets.SSH_DEPLOY_KEY }}
+          path: temp-dest-repo
+
+      - run: mv CHANGELOG.md temp-dest-repo
+      - run: echo "${{ needs.get-version.outputs.version }}" > temp-dest-repo/VERSION
 
       - name: Publish version files to openapi repository
         id: push_directory
@@ -51,8 +42,7 @@ jobs:
         env:
           SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
         with:
-          source-directory: temp-version-export/
-          target-directory: versioning/
+          source-directory: temp-dest-repo/
           destination-github-username: 'ashutosh-ukey'
           destination-repository-name: 'bare-node-proj-dist'
           user-email: ashutosh.ukey@circle.com
