@@ -12,7 +12,7 @@ jobs:
 
       - id: save-gen-cmd
         run: |
-          sample_cmd=opopenapi-generator-cli --help
+          sample_cmd="openapi-generator-cli --help"
           echo "::set-output name=cmd::$sample_cmd"
 
       - run: npx ${{ steps.save-gen-cmd.outputs.cmd }}
