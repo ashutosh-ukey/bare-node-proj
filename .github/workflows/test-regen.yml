@@ -9,8 +9,15 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
       - run: yarn install --frozen-lockfile
-      - run: |
-          npx openapi-generator-cli --help
+
+      - id: save-gen-cmd
+        run: |
+          sample_cmd=opopenapi-generator-cli --help
+          echo "::set-output name=cmd::$sample_cmd"
+
+      - run: npx ${{ steps.save-gen-cmd.outputs.cmd }}
+      # - run: |
+      #     npx openapi-generator-cli --help
 
       - run: |
           ver_level=("major" "minor" "patch")
@@ -35,3 +42,4 @@ jobs:
           done
 
           echo "Need a $VER_BUMP version bump"
+          echo "::set-output name=latestSection::$release_message"
