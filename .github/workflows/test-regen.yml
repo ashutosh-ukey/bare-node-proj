@@ -9,7 +9,7 @@ jobs:
       - uses: actions/setup-node@v3
       - run: yarn install --frozen-lockfile
       - run: |
-          openapi-generator-cli --help
+          npx openapi-generator-cli --help
 
       - run: |
           ver_level=("major" "minor" "patch")
