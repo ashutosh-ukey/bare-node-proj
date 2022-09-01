@@ -6,10 +6,11 @@ jobs:
   echo-index:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
       - run: yarn install --frozen-lockfile
       - run: |
-          npx openapi-generator-cli --help
+          openapi-generator-cli --help
 
       - run: |
           ver_level=("major" "minor" "patch")
