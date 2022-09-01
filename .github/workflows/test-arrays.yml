@@ -6,6 +6,10 @@ jobs:
   echo-index:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/setup-node@v3
+      - run: |
+          npx --no -- openapi-generator-cli --help
+
       - run: |
           ver_level=("major" "minor" "patch")
           echo "Hooooooaaaaa: ${ver_level[1]}"
