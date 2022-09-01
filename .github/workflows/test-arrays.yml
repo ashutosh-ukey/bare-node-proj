@@ -1,0 +1,11 @@
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  echo-index:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          ver_level=("major" "minor" "patch")
+          echo "Hooooooaaaaa: ${ver_level[1]}"
