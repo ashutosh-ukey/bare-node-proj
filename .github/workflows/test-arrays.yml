@@ -7,8 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-node@v3
+      - run: yarn install --frozen-lockfile
       - run: |
-          npx @openapitools/openapi-generator-cli --help
+          openapi-generator-cli --help
 
       - run: |
           ver_level=("major" "minor" "patch")
