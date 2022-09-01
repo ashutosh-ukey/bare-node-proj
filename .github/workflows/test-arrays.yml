@@ -9,3 +9,23 @@ jobs:
       - run: |
           ver_level=("major" "minor" "patch")
           echo "Hooooooaaaaa: ${ver_level[1]}"
+
+          OLD_VERSION=3.0.0
+          NEW_VERSION=1.0.1
+
+          IFS='.' read -rA OLD_VER_PARTS <<< $OLD_VERSION
+          IFS='.' read -rA NEW_VER_PARTS <<< $NEW_VERSION
+
+          VER_LEVEL=("major" "minor" "patch")
+          VER_BUMP=""
+
+          for i in $(seq 0 2); do 
+              if (( ${OLD_VER_PARTS[$i]} != ${NEW_VER_PARTS[$i]} ))
+              then
+                  VER_BUMP=${VER_LEVEL[$i]}
+                  break
+              fi
+              echo "It is ${OLD_VER_PARTS[$i]} ${NEW_VER_PARTS[$i]}"
+          done
+
+          echo "Need a $VER_BUMP version bump"
