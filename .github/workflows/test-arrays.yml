@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v3
       - run: |
-          npx --no -- openapi-generator-cli --help
+          npx openapi-generator-cli --help
 
       - run: |
           ver_level=("major" "minor" "patch")
