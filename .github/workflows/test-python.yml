@@ -1,5 +1,4 @@
 on: 
-  workflow_call:
   workflow_dispatch:
 
 jobs:
@@ -18,6 +17,6 @@ jobs:
       - name: Install Python dependencies
         if: steps.cache-dist.outputs.cache-hit != 'true'
         run: |
-          python3 -m rand.py
+          python3 rand.py
 
 
