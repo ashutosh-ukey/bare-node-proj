@@ -1,0 +1,23 @@
+on: 
+  workflow_call:
+  workflow_dispatch:
+
+jobs:
+  get-version:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.extract-version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Python
+        if: steps.cache-dist.outputs.cache-hit != 'true'
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.6"
+
+      - name: Install Python dependencies
+        if: steps.cache-dist.outputs.cache-hit != 'true'
+        run: |
+          python3 -m rand.py
+
+
