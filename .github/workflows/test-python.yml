@@ -2,7 +2,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  get-version:
+  test-python:
     runs-on: ubuntu-latest
     outputs:
       version: ${{ steps.extract-version.outputs.version }}
@@ -17,6 +17,7 @@ jobs:
       - name: Install Python dependencies
         if: steps.cache-dist.outputs.cache-hit != 'true'
         run: |
+          python3 -m pip install -r requirements.txt
           python3 rand.py
 
 
