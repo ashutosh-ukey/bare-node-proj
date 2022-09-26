@@ -1,6 +1,6 @@
 # Changelog
 
-## [3.2.3](https://github.com/ashutosh-ukey/bare-node-proj/compare/v3.2.2...v3.2.3) (2022-08-30)
+## [3.2.22](https://github.com/ashutosh-ukey/bare-node-proj/compare/v3.2.2...v3.2.3) (2022-08-30)
 ## [0.2.1](https://github.com/ashutosh-ukey/bare-node-proj/compare/v0.2.0...v0.2.1) (2022-08-29)
 
 
