@@ -1,6 +1,9 @@
 on: 
   workflow_dispatch:
 
+env:
+  SENS_FILE: "critical.txt"
+
 jobs:
   test-python:
     runs-on: ubuntu-latest
@@ -15,5 +18,7 @@ jobs:
                 set -- $i; 
                 echo $1 and $2; 
           done
+
+      - run: echo $SENS_FILE
 
 
