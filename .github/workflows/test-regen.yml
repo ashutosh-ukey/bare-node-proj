@@ -1,0 +1,44 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  echo-index:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - run: yarn install --frozen-lockfile
+
+      - id: save-gen-cmd
+        run: |
+          sample_cmd="openapi-generator-cli --help"
+          echo "::set-output name=cmd::$sample_cmd"
+
+      - run: npx ${{ steps.save-gen-cmd.outputs.cmd }}
+      # - run: |
+      #     npx openapi-generator-cli --help
+
+      - run: |
+          ver_level=("major" "minor" "patch")
+          echo "Hooooooaaaaa: ${ver_level[1]}"
+
+          OLD_VERSION=1.3.0
+          NEW_VERSION=1.0.1
+
+          IFS='.' read -ra OLD_VER_PARTS <<< $OLD_VERSION
+          IFS='.' read -ra NEW_VER_PARTS <<< $NEW_VERSION
+
+          VER_LEVEL=("major" "minor" "patch")
+          VER_BUMP=""
+
+          for i in $(seq 0 2); do 
+              if (( ${OLD_VER_PARTS[$i]} != ${NEW_VER_PARTS[$i]} ))
+              then
+                  VER_BUMP=${VER_LEVEL[$i]}
+                  break
+              fi
+              echo "It is ${OLD_VER_PARTS[$i]} ${NEW_VER_PARTS[$i]}"
+          done
+
+          echo "Need a $VER_BUMP version bump"
+          echo "::set-output name=latestSection::$release_message"

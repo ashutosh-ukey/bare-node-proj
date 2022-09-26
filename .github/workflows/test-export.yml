@@ -1,0 +1,57 @@
+on: 
+  workflow_call:
+  workflow_dispatch:
+
+jobs:
+  get-version:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.extract-version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v3
+      - id: read-packjson
+        run: |
+          content=`cat package.json`
+          content="${content//'%'/'%25'}"
+          content="${content//$'\n'/'%0A'}"
+          content="${content//$'\r'/'%0D'}"
+          echo "::set-output name=packageJson::$content"
+      - id: extract-version
+        run: echo "::set-output name=version::${{ fromJson(steps.read-packjson.outputs.packageJson).version }}"
+
+  sync:
+    needs: get-version
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout this repo
+        uses: actions/checkout@v3
+
+      - name: Checkout destination repo
+        uses: actions/checkout@v3
+        with:
+          repository: ashutosh-ukey/bare-node-proj-dist
+          ssh-key: ${{ secrets.SSH_DEPLOY_KEY }}
+          path: temp-dest-repo
+          ref: main
+
+      - name: Update version files
+        run: |
+          rm -rf temp-dest-repo/.git
+          mv CHANGELOG.md temp-dest-repo
+          echo "${{ needs.get-version.outputs.version }}" > temp-dest-repo/VERSION
+
+      - name: Push directory to another repository
+        uses: cpina/github-action-push-to-another-repository@ssh-deploy-key
+        env:
+          SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
+        with:
+          source-directory: temp-dest-repo
+          destination-github-username: 'ashutosh-ukey'
+          destination-repository-name: 'bare-node-proj-dist'
+          user-email: ashutosh.ukey@circle.com
+          target-branch: main
+
+      # TODO: Publish to Postman
+      # TODO: Publish to circle-node-sdk
+
+

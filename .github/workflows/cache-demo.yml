@@ -1,0 +1,42 @@
+name: Caching Primes
+
+on: [workflow_dispatch]
+
+jobs:
+  cache-secret:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Get Date
+      id: get-time
+      run: |
+        echo "::set-output name=time::$(/bin/date "+%s")"
+      shell: bash
+
+    - name: Cache Secret
+      id: cache-primes
+      uses: actions/cache@v3
+      with:
+        path: secret.txt
+        key: ${{ runner.os }}-${{ hashFiles('src/**', '.github/**', 'README.md') }}
+
+    - name: Generate Secret
+      run: echo "woof" > secret.txt
+
+
+  echo-secret:
+    needs: [cache-secret]
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Cache Secret
+      id: cache-primes
+      uses: actions/cache@v3
+      with:
+        path: secret.txt
+        key: ${{ runner.os }}-${{ hashFiles('src/**', '.github/**', 'README.md') }}
+
+    - name: Echo Secret
+      run: echo $(cat secret.txt)
