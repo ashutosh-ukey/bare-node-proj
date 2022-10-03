@@ -15,6 +15,7 @@ jobs:
         with:
           release-type: node
           package-name: release-please-action
+          fork: true
 
       # - uses: actions/checkout@v2
 
