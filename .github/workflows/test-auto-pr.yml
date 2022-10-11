@@ -29,5 +29,5 @@ jobs:
           title: Test auto PR with GPG
           commit-message: "chore: regen rand num"
           add-paths: rand-num.txt
-          author: ${{ steps.import-gpg.outputs.name }} ${{ steps.import-gpg.outputs.email }}
-          committer: ${{ steps.import-gpg.outputs.name }} ${{ steps.import-gpg.outputs.email }}
+          author: ${{ steps.import-gpg.outputs.name }} <${{ steps.import-gpg.outputs.email }}>
+          committer: ${{ steps.import-gpg.outputs.name }} <${{ steps.import-gpg.outputs.email }}>
