@@ -1,8 +1,8 @@
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
 name: release-please
 jobs:
   release-please:
@@ -14,8 +14,7 @@ jobs:
         id: release
         with:
           release-type: node
-          package-name: release-please-action
-          fork: true
+          package-name: "@ashuk203/bare-node-proj"
 
       # - uses: actions/checkout@v2
 

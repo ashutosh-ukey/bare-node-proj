@@ -1,0 +1,36 @@
+on:
+  workflow_dispatch:
+
+name: Auto PR test
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR base branch
+        uses: actions/checkout@v3
+        with:
+          ref: master
+
+      - name: Generate random number
+        run: |
+          echo $((1 + $RANDOM % 10)) > rand-num.txt
+
+      - name: Import GPG key
+        id: import-gpg
+        uses: crazy-max/ghaction-import-gpg@v5
+        with:
+          gpg_private_key: ${{ secrets.ASHU_GPG_PRIVATE }}
+          passphrase: ${{ secrets.ASHU_GPG_PASSPHRASE }}
+
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          base: master
+          branch: test-auto-pr
+          title: Test auto PR with GPG
+          commit-message: "chore: regen rand num"
+          add-paths: rand-num.txt
+          author: ${{ steps.import-gpg.outputs.name }} ${{ steps.import-gpg.outputs.email }}
+          committer: ${{ steps.import-gpg.outputs.name }} ${{ steps.import-gpg.outputs.email }}
