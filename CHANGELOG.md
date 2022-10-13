@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.2.25](https://github.com/ashutosh-ukey/bare-node-proj/compare/v3.2.24...v3.2.25) (2022-09-28)
+
+
+### Bug Fixes
+
+* revert ping func ([04a03fe](https://github.com/ashutosh-ukey/bare-node-proj/commit/04a03fee5ee64d8f01d4bc5741f6ff83a7ed0cff))
+
 ## [3.2.23](https://github.com/ashutosh-ukey/bare-node-proj/compare/v3.2.22...v3.2.23) (2022-09-28)
 
 
