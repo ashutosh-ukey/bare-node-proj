@@ -8,7 +8,7 @@
     "typescript": "^4.7.4"
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.com/"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
