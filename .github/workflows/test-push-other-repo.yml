@@ -13,6 +13,7 @@ jobs:
           repository: ashutosh-ukey/bare-node-proj-dist
           token: ${{ secrets.ASHU_PAT }}
           path: temp-dest-repo
+          ref: test-master-1
 
       - name: Generate random number
         run: |
