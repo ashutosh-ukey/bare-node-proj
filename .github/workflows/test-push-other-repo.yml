@@ -35,6 +35,7 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.ASHU_PAT }}
         with:
           source-directory: temp-dest-repo
+          destination-repository-username: ashutosh-ukey
           destination-repository-name: bare-node-proj-dist
           commit-message: Testing repo push action
           target-branch: test-master-1
