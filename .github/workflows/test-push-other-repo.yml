@@ -16,7 +16,7 @@ jobs:
 
       - name: Generate random number
         run: |
-          echo $((1 + $RANDOM % 1000)) > rand-num.txt
+          echo $((1 + $RANDOM % 1000)) > temp-dest-repo/rand-num.txt
 
       - name: Import GPG key
         id: import-gpg
