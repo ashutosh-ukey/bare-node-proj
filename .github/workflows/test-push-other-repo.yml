@@ -11,7 +11,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: ashutosh-ukey/bare-node-proj-dist
-          token: ${{ env.ASHU_PAT }}
+          token: ${{ secrets.ASHU_PAT }}
           path: temp-dest-repo
 
       - name: Generate random number
@@ -32,7 +32,7 @@ jobs:
         id: push_directory
         uses: cpina/github-action-push-to-another-repository@ssh-deploy-key
         env:
-          SSH_DEPLOY_KEY: ${{ env.ASHU_PAT }}
+          SSH_DEPLOY_KEY: ${{ secrets.ASHU_PAT }}
         with:
           source-directory: temp-dest-repo
           destination-repository-name: bare-node-proj-dist
