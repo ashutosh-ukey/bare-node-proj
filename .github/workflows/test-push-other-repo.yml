@@ -32,7 +32,7 @@ jobs:
         id: push_directory
         uses: cpina/github-action-push-to-another-repository@ssh-deploy-key
         env:
-          SSH_DEPLOY_KEY: ${{ secrets.ASHU_PAT }}
+          API_TOKEN_GITHUB: ${{ secrets.ASHU_PAT }}
         with:
           source-directory: temp-dest-repo
           destination-repository-name: bare-node-proj-dist
