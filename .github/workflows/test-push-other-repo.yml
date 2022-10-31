@@ -7,15 +7,15 @@ jobs:
   push-branch:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout PR base branch
-        uses: actions/checkout@v3
+      # - name: Checkout PR base branch
+      #   uses: actions/checkout@v3
 
       - name: Checkout PR dest branch
         uses: actions/checkout@v3
         with:
           repository: ashutosh-ukey/bare-node-proj-dist
           token: ${{ secrets.ASHU_PAT }}
-          path: temp-dest-repo
+          # path: temp-dest-repo
           ref: test-master-1
 
       - name: Generate random number
@@ -53,7 +53,7 @@ jobs:
           # user-email: ashutosh.ukey@circle.com
           # user-name: Ashutosh Ukey
 
-          source-directory: temp-dest-repo
+          # source-directory: temp-dest-repo
           destination-repository-username: ashutosh-ukey
           destination-repository-name: bare-node-proj-dist
           commit-message: Testing repo push action
