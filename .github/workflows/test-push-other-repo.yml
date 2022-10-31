@@ -35,10 +35,10 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.ASHU_PAT }}
         with:
-          # user-email: ${{ steps.import-gpg.outputs.email }}
-          # user-name: ${{ steps.import-gpg.outputs.name }}
-          user-email: ashutosh.ukey@circle.com
-          user-name: Ashutosh Ukey
+          user-email: ${{ steps.import-gpg.outputs.email }}
+          user-name: ${{ steps.import-gpg.outputs.name }}
+          # user-email: ashutosh.ukey@circle.com
+          # user-name: Ashutosh Ukey
 
           source-directory: temp-dest-repo
           destination-repository-username: ashutosh-ukey
