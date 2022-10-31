@@ -38,6 +38,7 @@ jobs:
           # user-email: ${{ steps.import-gpg.outputs.email }}
           # user-name: ${{ steps.import-gpg.outputs.name }}
           user-email: ashutosh.ukey@circle.com
+          user-name: ashutosh-ukey
 
           source-directory: temp-dest-repo
           destination-repository-username: ashutosh-ukey
