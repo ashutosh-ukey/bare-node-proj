@@ -35,7 +35,7 @@ jobs:
           git config user.name "${{ steps.import-gpg.outputs.name }}"
           git config user.email "${{ steps.import-gpg.outputs.email }}"
           cd temp-dest-repo
-          git commit -m "Testing repo push action"
+          git commit -m "Testing repo push action foo"
           git push --signed origin test-master-1
 
       # - name: Publish to openapi repository
