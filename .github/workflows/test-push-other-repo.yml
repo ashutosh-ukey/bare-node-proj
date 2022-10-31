@@ -9,6 +9,9 @@ jobs:
     steps:
       - name: Checkout PR base branch
         uses: actions/checkout@v3
+
+      - name: Checkout PR dest branch
+        uses: actions/checkout@v3
         with:
           repository: ashutosh-ukey/bare-node-proj-dist
           token: ${{ secrets.ASHU_PAT }}
@@ -30,28 +33,28 @@ jobs:
           git_commit_gpgsign: true
           # git_push_gpgsign: true
 
-      - name: Push changes
-        run: |
-          cd temp-dest-repo
-          git config user.name "${{ steps.import-gpg.outputs.name }}"
-          git config user.email "${{ steps.import-gpg.outputs.email }}"
-          git add rand-num.txt
-          git commit -m "Testing repo push action foo"
-          git push origin test-master-1
+      # - name: Push changes
+      #   run: |
+      #     cd temp-dest-repo
+      #     git config user.name "${{ steps.import-gpg.outputs.name }}"
+      #     git config user.email "${{ steps.import-gpg.outputs.email }}"
+      #     git add rand-num.txt
+      #     git commit -m "Testing repo push action foo"
+      #     git push origin test-master-1
 
-      # - name: Publish to openapi repository
-      #   id: push_directory
-      #   uses: cpina/github-action-push-to-another-repository@main
-      #   env:
-      #     API_TOKEN_GITHUB: ${{ secrets.ASHU_PAT }}
-      #   with:
-      #     user-email: ${{ steps.import-gpg.outputs.email }}
-      #     user-name: ${{ steps.import-gpg.outputs.name }}
-      #     # user-email: ashutosh.ukey@circle.com
-      #     # user-name: Ashutosh Ukey
+      - name: Publish to openapi repository
+        id: push_directory
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.ASHU_PAT }}
+        with:
+          user-email: ${{ steps.import-gpg.outputs.email }}
+          user-name: ${{ steps.import-gpg.outputs.name }}
+          # user-email: ashutosh.ukey@circle.com
+          # user-name: Ashutosh Ukey
 
-      #     source-directory: temp-dest-repo
-      #     destination-repository-username: ashutosh-ukey
-      #     destination-repository-name: bare-node-proj-dist
-      #     commit-message: Testing repo push action
-      #     target-branch: test-master-1
+          source-directory: temp-dest-repo
+          destination-repository-username: ashutosh-ukey
+          destination-repository-name: bare-node-proj-dist
+          commit-message: Testing repo push action
+          target-branch: test-master-1
