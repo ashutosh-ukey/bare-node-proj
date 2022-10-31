@@ -37,7 +37,7 @@ jobs:
           git config user.email "${{ steps.import-gpg.outputs.email }}"
           git add rand-num.txt
           git commit -m "Testing repo push action foo"
-          git push --signed origin test-master-1
+          git push origin test-master-1
 
       # - name: Publish to openapi repository
       #   id: push_directory
