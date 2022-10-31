@@ -54,7 +54,7 @@ jobs:
           # user-email: ashutosh.ukey@circle.com
           # user-name: Ashutosh Ukey
 
-          # source-directory: temp-dest-repo
+          source-directory: .
           destination-repository-username: ashutosh-ukey
           destination-repository-name: bare-node-proj-dist
           commit-message: Testing repo push action
