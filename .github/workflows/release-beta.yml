@@ -19,21 +19,12 @@ jobs:
           package-name: release-please-action
           default-branch: beta-version
           changelog-types: |
-            {
-              "feat": "Features",
-              "fix": "Fixes",
-              "perf": "Performance Improvements",
-              "deps": "Dependencies",
-              "revert": "Reverts",
-              "docs": "Documentation",
-              "style": "Styles",
-              "chore": "Miscellaneous Chores",
-              "refactor": "Code Refactoring",
-              "test": "Tests",
-              "build": "Build System",
-              "ci": "Continuous Integration",
-              "oadocs": "OpenAPI Doc Updates"
-            }
+            [
+              {"type":"feat","section":"Features","hidden":false},
+              {"type":"fix","section":"Fixes","hidden":false},
+              {"type":"oadocs","section":"OpenAPI Doc Updates","hidden":false},
+              {"type":"chore","section":"Miscellaneous","hidden":true}
+            ]
 
       # - uses: actions/checkout@v2
 
