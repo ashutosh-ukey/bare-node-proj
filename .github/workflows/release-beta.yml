@@ -18,6 +18,22 @@ jobs:
           release-type: node
           package-name: release-please-action
           default-branch: beta-version
+          changelog-types: |
+            {
+              "feat": "Features",
+              "fix": "Fixes",
+              "perf": "Performance Improvements",
+              "deps": "Dependencies",
+              "revert": "Reverts",
+              "docs": "Documentation",
+              "style": "Styles",
+              "chore": "Miscellaneous Chores",
+              "refactor": "Code Refactoring",
+              "test": "Tests",
+              "build": "Build System",
+              "ci": "Continuous Integration",
+              "oadocs": "OpenAPI Doc Updates"
+            }
 
       # - uses: actions/checkout@v2
 
