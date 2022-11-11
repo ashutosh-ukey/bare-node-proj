@@ -21,7 +21,7 @@ jobs:
           changelog-types: |
             [
               {"type":"fix","section":"Fixes","hidden":false},
-              {"type":"oadocs","section":"OpenAPI Doc Updates","hidden":false},
+              {"type":"oadocs","section":"OpenAPI Updates","hidden":false},
               {"type":"chore","section":"Miscellaneous","hidden":true}
             ]
 
