@@ -20,7 +20,6 @@ jobs:
           default-branch: beta-version
           changelog-types: |
             [
-              {"type":"feat","section":"Features","hidden":false},
               {"type":"fix","section":"Fixes","hidden":false},
               {"type":"oadocs","section":"OpenAPI Doc Updates","hidden":false},
               {"type":"chore","section":"Miscellaneous","hidden":true}
