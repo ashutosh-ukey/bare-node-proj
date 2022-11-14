@@ -1,5 +1,43 @@
 # Changelog
 
+## [1.0.0](https://github.com/ashutosh-ukey/bare-node-proj/compare/v0.2.1...v1.0.0) (2022-11-14)
+
+
+### ⚠ BREAKING CHANGES
+
+* modify msg grammar
+* lets pretend this is a breaking change
+* delete msg var
+
+### OpenAPI Updates
+
+* multiline cc beta ([#42](https://github.com/ashutosh-ukey/bare-node-proj/issues/42)) ([4efb85b](https://github.com/ashutosh-ukey/bare-node-proj/commit/4efb85be8ff93fefb884ae3b38bad0b506185e48))
+* testing new header ([4efb85b](https://github.com/ashutosh-ukey/bare-node-proj/commit/4efb85be8ff93fefb884ae3b38bad0b506185e48))
+
+
+### Fixes
+
+* a bug's life ([3736d3f](https://github.com/ashutosh-ukey/bare-node-proj/commit/3736d3f88618d82cdd2aa5da57f9e577cf29f838))
+* a bug's life ([338cddc](https://github.com/ashutosh-ukey/bare-node-proj/commit/338cddcd58b42169ce301dbe52285febc45b0384))
+* delete msg var ([5996fab](https://github.com/ashutosh-ukey/bare-node-proj/commit/5996fab782a12833d487cb92977e0230e44f784f))
+* hey yo ([3736d3f](https://github.com/ashutosh-ukey/bare-node-proj/commit/3736d3f88618d82cdd2aa5da57f9e577cf29f838))
+* hey yo ([338cddc](https://github.com/ashutosh-ukey/bare-node-proj/commit/338cddcd58b42169ce301dbe52285febc45b0384))
+* hidden commit check ([44d5bc3](https://github.com/ashutosh-ukey/bare-node-proj/commit/44d5bc38d03723804f8062eed34e2dd46ec410a5))
+* hopefully I see this in the changelog ([3736d3f](https://github.com/ashutosh-ukey/bare-node-proj/commit/3736d3f88618d82cdd2aa5da57f9e577cf29f838))
+* hopefully I see this in the changelog ([338cddc](https://github.com/ashutosh-ukey/bare-node-proj/commit/338cddcd58b42169ce301dbe52285febc45b0384))
+* multiline cc beta ([#43](https://github.com/ashutosh-ukey/bare-node-proj/issues/43)) ([3736d3f](https://github.com/ashutosh-ukey/bare-node-proj/commit/3736d3f88618d82cdd2aa5da57f9e577cf29f838))
+* rm unused file ([#40](https://github.com/ashutosh-ukey/bare-node-proj/issues/40)) ([338cddc](https://github.com/ashutosh-ukey/bare-node-proj/commit/338cddcd58b42169ce301dbe52285febc45b0384))
+
+
+### docs
+
+* lets pretend this is a breaking change ([fdea606](https://github.com/ashutosh-ukey/bare-node-proj/commit/fdea606dc2a53437b57314486bb8fec58d34b9d7))
+
+
+### Miscellaneous
+
+* modify msg grammar ([6e7cde8](https://github.com/ashutosh-ukey/bare-node-proj/commit/6e7cde8e863b619c465d9802cb894223be53c7c9))
+
 ## [0.2.1](https://github.com/ashutosh-ukey/bare-node-proj/compare/v0.2.0...v0.2.1) (2022-08-29)
 
 
