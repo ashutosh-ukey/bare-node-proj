@@ -2,4 +2,4 @@ export function pingPackage(msg?: string): string {
     return "pong";
 }
 
-export const aSecret: string = "My favorite kid's cartoon is Spongebob Squarepants";
+export const packageSecret: string = "Our favorite kid's cartoon is Spongebob Squarepants";
