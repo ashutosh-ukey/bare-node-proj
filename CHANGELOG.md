@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/ashutosh-ukey/bare-node-proj/compare/v1.0.0...v1.0.1) (2023-01-12)
+
+
+### Fixes
+
+* rand readme change ([2662409](https://github.com/ashutosh-ukey/bare-node-proj/commit/26624091d75f7a44f6dc88025a8b81785472f8be))
+
 ## [1.0.0](https://github.com/ashutosh-ukey/bare-node-proj/compare/v0.2.1...v1.0.0) (2022-11-14)
 
 
